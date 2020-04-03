@@ -29,15 +29,25 @@ h1 {
   margin: 0 auto;
   max-width: 784px;
   height: 100%;
-  background-color: transparent;
-  background: url("images/graph3.png") repeat center center;
-  background-image: url("images/graph3.svg");
-  background-size: auto 75%;
 }
 
 .container::before {
   content: "";
-  background-color: rgba(255, 255, 255, 0.75);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: transparent;
+  background: url("images/graph3.png") repeat center center;
+  background-image: url("images/graph3.svg");
+  background-size: auto 75%;
+  z-index: -2;
+}
+
+.container::after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.95);
   top: 0;
   left: 0;
   bottom: 0;
