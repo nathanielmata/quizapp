@@ -1,7 +1,15 @@
 html {
+  box-sizing: border-box;
   background-color: transparent;
   background: url("images/bg.png") repeat;
   background-image: url("images/bg.svg");
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -9,26 +17,26 @@ body {
   font-size: 15px;
   color: #000000;
   margin: 0;
+  height: 100%;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 .container {
   text-align: center;
   margin: 0 auto;
   max-width: 784px;
-}
-
-header {
-  padding: 10px 0;
-  background-color: black;
-  border: 1px solid black;
-  color: white;
+  height: 100%;
 }
 
 main {
-  height: auto;
+  height: 100%;
 }
 
-main section {
+main section,
+main .formula {
   margin: 18px;
   padding: 18px;
   border: 1px solid black;
@@ -41,7 +49,17 @@ form {
 
 form h2 {
   text-align: left;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+form input {
+  display: block;
+  float: left;
+}
+
+form span {
+  display: block;
+  margin-left: 30px;
 }
 
 label {
@@ -53,22 +71,82 @@ label {
 button {
   width: 100px;
   margin: 20px auto;
-  padding: 8px;
+  padding: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(11, 156, 49, 0.7);
 }
 
-.formula {
+button:hover {
+  background-color: rgba(11, 156, 49, 0.5);
+}
+
+.start.formula {
+  height: 100%;
+}
+
+.formula.question-formula h1 {
+  margin: 0;
+}
+
+.formula code {
   display: block;
   background-color: white;
   font-style: italic;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .formula span {
   font-weight: bold;
 }
 
+ul {
+  display: inline;
+  text-align: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+li {
+  display: inline;
+  text-align: center;
+  list-style: none;
+  margin-right: 12px;
+}
+
+code ul {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+}
+
+code li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.feedback-container {
+  border-width: 4px;
+}
+
 .feedback {
   font-weight: bold;
+  font-size: 1.4em;
+}
+
+.correct {
+  border-color: green;
+}
+
+.incorrect {
+  border-color: red;
+}
+
+.final .score {
+  font-size: 1.3em;
+  margin: 12px;
 }
 
 .congratulations {
