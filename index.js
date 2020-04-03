@@ -207,11 +207,13 @@ function finalTmpl() {
     <section class="final">
       <h1>Your Final Score Is</h1>
       <div class="score">${scoreTmpl().replace("Your Score:", "")}</div>
-      <button class="js-start">Restart Quiz</button>
+      <button class="js-start">Restart</button>
     </section>
     <section>
       <div>
-          <img class="congratulations" src="images/congratulations.jpg" alt="congratulations image" />
+          <img class="congratulations" src="images/${
+            state.score < 5 ? "nicetry.png" : "congratulations.jpg"
+          }" alt="congratulations image" />
       </div>
     </section>
     `;

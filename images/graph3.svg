@@ -1,0 +1,56 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        circle {
+            fill: #FFFFFF;
+            stroke: #333C91;
+            stroke-width: 4px;
+        }
+
+        line {
+            stroke: black;
+            stroke-width: 4px;
+        }
+
+        text {
+            text-anchor: middle;
+            alignment-baseline: middle;
+        }
+
+        .edge {
+            font-size: 18px;
+            fill: red;
+            font-weight: bold;
+        }
+    </style>
+    <g>
+        <line x1="50" y1="30" x2="30" y2="110" />
+        <line x1="50" y1="30" x2="130" y2="50" />
+        <line x1="30" y1="110" x2="90" y2="170" />
+        <line x1="90" y1="170" x2="170" y2="110" />
+        <line x1="90" y1="170" x2="130" y2="50" />
+        <line x1="130" y1="50" x2="170" y2="110" />
+        <line x1="30" y1="110" x2="130" y2="50" />
+
+    </g>
+    <g>
+        <circle cx="50" cy="30" r="15" />
+        <!-- <text x="50" y="30">a</text> -->
+    </g>
+    <g>
+        <circle cx="30" cy="110" r="15" />
+        <!-- <text x="30" y="110">c</text> -->
+    </g>
+    <g>
+        <circle cx="90" cy="170" r="15" />
+        <!-- <text x="90" y="170">d</text> -->
+    </g>
+    <g>
+        <circle cx="130" cy="50" r="15" />
+        <!-- <text x="130" y="50">b</text> -->
+    </g>
+    <g>
+        <circle cx="170" cy="110" r="15" />
+        <!-- <text x="170" y="110">e</text> -->
+    </g>
+
+</svg>

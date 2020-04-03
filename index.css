@@ -29,9 +29,26 @@ h1 {
   margin: 0 auto;
   max-width: 784px;
   height: 100%;
+  background-color: transparent;
+  background: url("images/graph3.png") repeat center center;
+  background-image: url("images/graph3.svg");
+  background-size: auto 75%;
+}
+
+.container::before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.75);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -40,7 +57,7 @@ main .formula {
   margin: 18px;
   padding: 18px;
   border: 1px solid black;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.97);
 }
 
 form {
@@ -71,18 +88,40 @@ label {
 button {
   width: 100px;
   margin: 20px auto;
-  padding: 12px;
+  padding: 14px 18px;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(11, 156, 49, 0.7);
+  background-color: rgba(38, 41, 127, 0.8);
+  color: white;
+  font-size: 1.2em;
 }
 
 button:hover {
-  background-color: rgba(11, 156, 49, 0.5);
+  background-color: rgba(38, 41, 127, 0.6);
 }
 
 .start.formula {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0%;
+  left: 0;
+}
+
+.start.formula code {
+  margin: 20px 0;
+}
+
+.start.formula .start-btn {
+  margin: 20px 0;
+}
+
+.start-inner {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .formula.question-formula h1 {
@@ -91,7 +130,6 @@ button:hover {
 
 .formula code {
   display: block;
-  background-color: white;
   font-style: italic;
   padding: 10px 0;
 }
@@ -156,4 +194,20 @@ code li {
 
 footer {
   height: 100px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .start.formula h1 {
+    font-size: 1.3em;
+  }
+
+  code {
+    font-size: 12px;
+  }
+
+  main section,
+  main .formula {
+    margin: 8px;
+    padding: 12px;
+  }
 }
