@@ -70,7 +70,28 @@ function renderQuestion() {
   const qType = STORE[qIdx].type;
 
   // get the formula html for this type of question
-  const formulaHtml = formulaTmpl(qType);
+  let formulaParams;
+  let formulaVals = {
+    time: { name: "Time", type: "hours" },
+    distance: { name: "Distance", type: "miles" },
+    speed: { name: "Speed", type: "miles/hour" }
+  };
+
+  let time = [formulaVals.time, formulaVals.distance, formulaVals.speed];
+  let distance = [formulaVals.distance, formulaVals.time, formulaVals.speed];
+  let speed = [formulaVals.speed, formulaVals.distance, formulaVals.time];
+
+  if (qType === "time") {
+    formulaParams = time;
+  }
+  if (qType === "distance") {
+    formulaParams = distance;
+  }
+  if (qType === "speed") {
+    formulaParams = speed;
+  }
+
+  const formulaHtml = formulaTmpl(qType, formulaParams);
 
   // collect answers html
   const answersHtml = answersTmpl(answers);
@@ -99,28 +120,7 @@ function renderFinal() {
   renderMain(finalHtml);
 }
 
-function formulaTmpl(qType) {
-  let vals;
-  let formulaVals = {
-    time: { name: "Time", type: "hours" },
-    distance: { name: "Distance", type: "miles" },
-    speed: { name: "Speed", type: "miles/hour" }
-  };
-
-  let time = [formulaVals.time, formulaVals.distance, formulaVals.speed];
-  let distance = [formulaVals.distance, formulaVals.time, formulaVals.speed];
-  let speed = [formulaVals.speed, formulaVals.distance, formulaVals.time];
-
-  if (qType === "time") {
-    vals = time;
-  }
-  if (qType === "distance") {
-    vals = distance;
-  }
-  if (qType === "speed") {
-    vals = speed;
-  }
-
+function formulaTmpl(qType, vals) {
   let tmpl = `
     <ul>
       <li><span>${vals[0].name}</span></li>
