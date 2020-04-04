@@ -176,6 +176,7 @@ code li {
 }
 
 .feedback-container {
+  flex: 1;
   border-width: 4px;
 }
 
@@ -197,9 +198,20 @@ code li {
   margin: 12px;
 }
 
+.final-img-container {
+  position: relative;
+  flex: 1;
+}
+
 .congratulations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: auto;
+  margin: auto;
 }
 
 footer {

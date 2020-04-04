@@ -77,18 +77,14 @@ function renderQuestion() {
     speed: { name: "Speed", type: "miles/hour" }
   };
 
-  let time = [formulaVals.time, formulaVals.distance, formulaVals.speed];
-  let distance = [formulaVals.distance, formulaVals.time, formulaVals.speed];
-  let speed = [formulaVals.speed, formulaVals.distance, formulaVals.time];
-
   if (qType === "time") {
-    formulaParams = time;
+    formulaParams = [formulaVals.time, formulaVals.distance, formulaVals.speed];
   }
   if (qType === "distance") {
-    formulaParams = distance;
+    formulaParams = [formulaVals.distance, formulaVals.time, formulaVals.speed];
   }
   if (qType === "speed") {
-    formulaParams = speed;
+    formulaParams = [formulaVals.speed, formulaVals.distance, formulaVals.time];
   }
 
   const formulaHtml = formulaTmpl(qType, formulaParams);
@@ -209,12 +205,12 @@ function finalTmpl() {
       <div class="score">${scoreTmpl().replace("Your Score:", "")}</div>
       <button class="js-start">Restart</button>
     </section>
-    <section>
-      <div>
-          <img class="congratulations" src="images/${
-            state.score < 5 ? "nicetry.png" : "congratulations.jpg"
-          }" alt="congratulations image" />
-      </div>
+    <section class="final-img-container">
+      <img class="congratulations" src="images/${
+        state.score < 5 ? "nicetry.png" : "congratulations.jpg"
+      }" alt="${
+    state.score < 5 ? "Nice Try! You can do better." : "Congratulations"
+  }" />
     </section>
     `;
 }
