@@ -63,7 +63,8 @@ main {
 }
 
 main section,
-main .formula {
+main .formula,
+main .final {
   margin: 18px;
   padding: 18px;
   border: 1px solid black;
@@ -194,29 +195,38 @@ li {
   border-color: red;
 }
 
-.final .score {
-  font-size: 1.3em;
-  margin: 12px;
-}
-
-.final-img-container {
-  position: relative;
-  flex: 1;
-}
-
-.congratulations {
+.final {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: auto;
-  margin: auto;
 }
 
-footer {
-  height: 100px;
+.final-inner {
+  position: absolute;
+  top: 15%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.final .score {
+  font-size: 1.3em;
+  margin: 12px;
+}
+
+.final button {
+  display: block;
+}
+
+.congratulations {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  max-width: 400px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -229,7 +239,8 @@ footer {
   }
 
   main section,
-  main .formula {
+  main .formula,
+  main .final {
     margin: 8px;
     padding: 12px;
   }

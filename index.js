@@ -150,14 +150,13 @@ function questionTmpl(idx, question, formulaHtml, answersHtml) {
       ${formulaHtml}
     </div>
     <section>
-      <div>
-      <ul>
-        <li class="question-num">
-          Question: <span>${idx + 1}</span>/<span>${STORE.length}</span>
-        </li>
-        <li class="score">${scoreTmpl()}</li>
-      </ul>
-        
+      <div class="progress">
+        <ul>
+          <li class="question-num">
+            Question: <span>${idx + 1}</span>/<span>${STORE.length}</span>
+          </li>
+          <li class="score">${scoreTmpl()}</li>
+        </ul>
       </div>
       <form id="js-question-form">
         <h2>${question}</h2>
@@ -198,18 +197,18 @@ function scoreTmpl() {
 
 function finalTmpl() {
   return `
-    <section class="final">
-      <h1>Your Final Score Is</h1>
-      <div class="score">${scoreTmpl().replace("Your Score:", "")}</div>
-      <button class="js-start">Restart</button>
-    </section>
-    <section class="final-img-container">
-      <img class="congratulations" src="images/${
-        state.score < 5 ? "nicetry.png" : "congratulations.jpg"
-      }" alt="${
+    <div class="final">
+      <div class="final-inner">
+        <h1>Your Final Score Is</h1>
+        <div class="score">${scoreTmpl().replace("Your Score:", "")}</div>
+        <button class="js-start">Restart</button>
+        <img class="congratulations" src="images/${
+          state.score < 5 ? "nicetry.png" : "congratulations.jpg"
+        }" alt="${
     state.score < 5 ? "Nice Try! You can do better." : "Congratulations"
   }" />
-    </section>
+      </div>
+    </div>
     `;
 }
 
