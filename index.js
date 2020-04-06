@@ -39,8 +39,7 @@ function submitAnswer(target) {
   if (selected.val()) {
     const userAnswer = STORE[qIdx].answers[selected.val()];
     const correctObj = STORE[qIdx].answers.find((a) => a.correct === true);
-    const correctStr =
-      correctObj.answer !== "" ? correctObj.answer : correctObj.label;
+    const correctStr = correctObj.label;
     let feedbackStr = `That's Incorrect. The correct answer is ${correctStr}`;
     let feedbackStyle = "incorrect";
 
