@@ -65,8 +65,8 @@ main {
 main section,
 main .formula,
 main .final {
-  margin: 18px;
-  padding: 18px;
+  margin: 8px;
+  padding: 12px;
   border: 1px solid black;
   background-color: rgba(255, 255, 255, 0.97);
 }
@@ -111,12 +111,20 @@ button:hover {
   background-color: rgba(38, 41, 127, 0.6);
 }
 
+.code {
+  font-size: 12px;
+}
+
 .start.formula {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0%;
   left: 0;
+}
+
+.start.formula h1 {
+  font-size: 1.3em;
 }
 
 .start.formula .code {
@@ -229,19 +237,19 @@ li {
   max-width: 400px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media screen and (min-width: 480px) {
   .start.formula h1 {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 
   .code {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   main section,
   main .formula,
   main .final {
-    margin: 8px;
-    padding: 12px;
+    margin: 18px;
+    padding: 18px;
   }
 }
