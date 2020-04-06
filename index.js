@@ -1,10 +1,10 @@
 const state = {
   count: 0,
-  score: 0
+  score: 0,
 };
 
 function handleStartQuiz() {
-  $("main").on("click", ".js-start", function(event) {
+  $("main").on("click", ".js-start", function (event) {
     event.preventDefault();
     state.count = 0;
     state.score = 0;
@@ -13,7 +13,7 @@ function handleStartQuiz() {
 }
 
 function handleSubmitAnswer() {
-  $("main").on("submit", "#js-question-form", function(event) {
+  $("main").on("submit", "#js-question-form", function (event) {
     event.preventDefault();
     $("input[type=radio]").attr("disabled", true);
     $(".js-submit").hide();
@@ -22,7 +22,7 @@ function handleSubmitAnswer() {
 }
 
 function handleNextQuestion() {
-  $("main").on("click", ".js-next", function(event) {
+  $("main").on("click", ".js-next", function (event) {
     event.preventDefault();
     if (state.count <= STORE.length - 1) {
       renderQuestion();
@@ -38,7 +38,7 @@ function submitAnswer(target) {
 
   if (selected.val()) {
     const userAnswer = STORE[qIdx].answers[selected.val()];
-    const correctObj = STORE[qIdx].answers.find(a => a.correct === true);
+    const correctObj = STORE[qIdx].answers.find((a) => a.correct === true);
     const correctStr =
       correctObj.answer !== "" ? correctObj.answer : correctObj.label;
     let feedbackStr = `That's Incorrect. The correct answer is ${correctStr}`;
@@ -74,7 +74,7 @@ function renderQuestion() {
   let formulaVals = {
     time: { name: "Time", type: "hours" },
     distance: { name: "Distance", type: "miles" },
-    speed: { name: "Speed", type: "miles/hour" }
+    speed: { name: "Speed", type: "miles/hour" },
   };
 
   if (qType === "time") {
@@ -106,9 +106,7 @@ function renderFeedback(feedbackHtml) {
 }
 
 function renderScore(str) {
-  $("main")
-    .find("li.score")
-    .html(str);
+  $("main").find("li.score").html(str);
 }
 
 function renderFinal() {
@@ -140,9 +138,9 @@ function formulaTmpl(qType, vals) {
 
   return `
     <h1>Calculate ${qType.replace(/^./, qType[0].toUpperCase())}</h1>
-    <code>
+    <div class="code">
       ${tmpl}
-    </code>
+    </div>
     `;
 }
 
@@ -171,7 +169,7 @@ function questionTmpl(idx, question, formulaHtml, answersHtml) {
 }
 
 function answersTmpl(answers) {
-  return answers.map(function(answer, idx) {
+  return answers.map(function (answer, idx) {
     return `
     <label for="${idx}">
       <input type="radio" id="${idx}" name="radio" value="${idx}" required />
