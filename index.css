@@ -27,7 +27,7 @@ h1 {
 .container {
   text-align: center;
   margin: 0 auto;
-  max-width: 784px;
+  max-width: 960px;
   height: 100%;
 }
 
@@ -115,12 +115,23 @@ button:hover {
   font-size: 12px;
 }
 
-.start.formula {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0%;
-  left: 0;
+.start,
+.final {
+  position: relative;
+  height: auto;
+}
+
+.start-inner,
+.final-inner {
+  position: relative;
+}
+
+.start-inner {
+  height: 70%;
+}
+
+.final-inner {
+  height: auto;
 }
 
 .start.formula h1 {
@@ -133,14 +144,6 @@ button:hover {
 
 .start.formula .start-btn {
   margin: 20px 0;
-}
-
-.start-inner {
-  position: absolute;
-  top: 25%;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 .formula.question-formula h1 {
@@ -203,23 +206,6 @@ li {
   border-color: red;
 }
 
-.final {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.final-inner {
-  position: absolute;
-  top: 15%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-
 .final .score {
   font-size: 1.3em;
   margin: 12px;
@@ -251,5 +237,40 @@ li {
   main .final {
     margin: 18px;
     padding: 18px;
+  }
+}
+
+@media screen and (min-height: 360px) {
+  .start {
+    height: 100%;
+  }
+
+  .start-inner {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-height: 420px) {
+  .final {
+    height: 100%;
+  }
+
+  .start-inner {
+    height: 50%;
+  }
+
+  .final-inner {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
   }
 }
